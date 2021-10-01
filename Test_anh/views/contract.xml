@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="contract_form_view" model="ir.ui.view">
+            <field name="name">contract.form.view</field>
+            <field name="model">contact1234</field>
+
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="Ten" string="Ten Phuong An" class="oe_edit_only"/>
+                            <h1>
+                                <field name="Ten" string="Ten Phuong An"/>
+                            </h1>
+                        </div>
+                        <group name="images">
+                            <group>
+                                <field name="Bao_gia" string="Gia Phuong An"/>
+                            </group>
+                            <group>
+                                <field name="Thong_tin" string="Thong tin phuong an kinh doanh"/>
+                            </group>
+                        </group>
+
+                        <record>
+
+
+                            <notebook>
+                                <page string="Order Lines" name="order_lines">
+
+                                    <form>
+
+                                        <groups>
+                                            <field name="name" string="Ten nguoi xu ly"/>
+                                            <field name="state" string="Trang thai xu ly"/>
+
+                                        </groups>
+
+
+                                    </form>
+                                    <tree string="Sales Order Lines" editable="bottom">
+
+                                        <field name="name" string="Ten nguoi xu ly"/>
+                                        <field name="state" string="Trang thai xu ly"/>
+                                    </tree>
+
+
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <button id="button_confirm" name="action_confirm" string="Confirm"
+                                                        class="btn-primary"
+                                                        confirm="Are you sure that you need to confirm ?"
+                                                        type="object"/>
+                                                <button id="button_reject" name="action_reject" string="Reject"
+                                                        class="btn-primary"
+                                                        confirm="Are you sure that you need to reject ?"
+                                                        type="object"/>
+                                                <group>
+                                                    <field name="state" widget="statusbar"
+                                                           statusbar_visible="reject,confirm"/>
+                                                </group>
+                                            </group>
+
+                                        </group>
+                                    </form>
+
+
+                                </page>
+                            </notebook>
+                        </record>
+
+                        <!--                        <group name="xac nhan" groups="Test_anh.group_advanced">-->
+                        <!--                            <group>-->
+                        <!--                                <field name="name" string="Ten nguoi xac nhan"/>-->
+                        <!--                            </group>-->
+                        <!--                            <group>-->
+                        <!--                        <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary"-->
+                        <!--                                confirm="Are you sure that you need to confirm ?"-->
+                        <!--                                type="object"/>-->
+                        <!--                        <button id="button_reject" name="action_reject" string="Reject" class="btn-primary"-->
+                        <!--                                confirm="Are you sure that you need to reject ?"-->
+                        <!--                                type="object"/>-->
+
+                        <!--                                <field name="state" widget="statusbar" statusbar_visible="pending,reject,confirm"/>-->
+                        <!--                            </group>-->
+
+                        <!--                        </group>-->
+                    </sheet>
+                </form>
+            </field>
+            <!--            <div class="oe_chatter">-->
+            <!--                <field name="message_follower_ids"/>-->
+            <!--                <field name="activity_ids"/>-->
+            <!--                <field name="message_ids"/>-->
+            <!--            </div>-->
+        </record>
+    </data>
+</odoo>
